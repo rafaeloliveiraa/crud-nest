@@ -1,0 +1,35 @@
+### urlbase
+@urlBase=http://localhost:4000
+
+### Pegar todas as Despesas
+GET {{urlBase}}/despesas
+
+### Criar uma nova Despesa
+POST {{urlBase}}/despesas
+Content-Type: application/json
+
+{
+  "descricao": "Conta de água",
+  "valor": 150.75,
+  "pago": false,
+  "data": "2026-02-26T00:00:00.000Z"
+}
+
+### id de testes
+@id=5a306971-5753-4680-9f51-f2d5aee74e9e
+
+### Pegar uma Despesa específica
+GET {{urlBase}}/despesas/{{id}}
+
+### Atualizar uma Despesa
+PATCH {{urlBase}}/despesas/{{id}}
+Content-Type: application/json
+
+{
+  "descricao": "Conta de água atualizada",
+  "valor": 160.00,
+  "pago": true
+}
+
+### Deletar uma Despesa
+DELETE {{urlBase}}/despesas/{{id}}
